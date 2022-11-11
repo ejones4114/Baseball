@@ -86,9 +86,5 @@ int main() {
    std::cout << cleantext(out->root) << std::endl;
    gumbo_destroy_output(&kGumboDefaultOptions, out);
    
-   
-
-   
-   
    return 0;
 }
