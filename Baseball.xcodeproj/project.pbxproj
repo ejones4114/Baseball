@@ -16,6 +16,11 @@
 		FAC9010D291EB78F00EAEB69 /* CurlObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC9010C291EB78F00EAEB69 /* CurlObject.cpp */; };
 		FAC90110291EC21000EAEB69 /* TeamNameTrieTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC9010E291EC21000EAEB69 /* TeamNameTrieTree.cpp */; };
 		FAC901172920078D00EAEB69 /* UserInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC901162920078D00EAEB69 /* UserInput.cpp */; };
+		FAC9011A2920140B00EAEB69 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC901182920140B00EAEB69 /* Game.cpp */; };
+		FAC9011D292014D800EAEB69 /* Team.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC9011B292014D800EAEB69 /* Team.cpp */; };
+		FAC90127292016CA00EAEB69 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC90125292016CA00EAEB69 /* Player.cpp */; };
+		FAC90128292016CA00EAEB69 /* Hitters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC90124292016CA00EAEB69 /* Hitters.cpp */; };
+		FAC9012B29201C8900EAEB69 /* GameAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC9012929201C8900EAEB69 /* GameAction.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +47,15 @@
 		FAC9010F291EC21000EAEB69 /* TeamNameTrieTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamNameTrieTree.h; sourceTree = "<group>"; };
 		FAC901152920078D00EAEB69 /* UserInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInput.h; sourceTree = "<group>"; };
 		FAC901162920078D00EAEB69 /* UserInput.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UserInput.cpp; sourceTree = "<group>"; };
+		FAC901182920140B00EAEB69 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		FAC901192920140B00EAEB69 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		FAC9011B292014D800EAEB69 /* Team.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Team.cpp; sourceTree = "<group>"; };
+		FAC9011C292014D800EAEB69 /* Team.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		FAC90124292016CA00EAEB69 /* Hitters.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Hitters.cpp; sourceTree = "<group>"; };
+		FAC90125292016CA00EAEB69 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		FAC90126292016CA00EAEB69 /* Hitters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hitters.h; sourceTree = "<group>"; };
+		FAC9012929201C8900EAEB69 /* GameAction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameAction.cpp; sourceTree = "<group>"; };
+		FAC9012A29201C8900EAEB69 /* GameAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameAction.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +96,18 @@
 				FAC901162920078D00EAEB69 /* UserInput.cpp */,
 				FAC901152920078D00EAEB69 /* UserInput.h */,
 				FAC90087291D786400EAEB69 /* main.cpp */,
+				FAC9011B292014D800EAEB69 /* Team.cpp */,
+				FAC9011C292014D800EAEB69 /* Team.h */,
+				FAC901182920140B00EAEB69 /* Game.cpp */,
+				FAC901192920140B00EAEB69 /* Game.h */,
+				FAC9012929201C8900EAEB69 /* GameAction.cpp */,
+				FAC9012A29201C8900EAEB69 /* GameAction.h */,
 				FAC9010C291EB78F00EAEB69 /* CurlObject.cpp */,
 				FAC9010E291EC21000EAEB69 /* TeamNameTrieTree.cpp */,
 				FAC9010F291EC21000EAEB69 /* TeamNameTrieTree.h */,
+				FAC90125292016CA00EAEB69 /* Player.cpp */,
+				FAC90124292016CA00EAEB69 /* Hitters.cpp */,
+				FAC90126292016CA00EAEB69 /* Hitters.h */,
 			);
 			path = Baseball;
 			sourceTree = "<group>";
@@ -157,11 +180,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC90127292016CA00EAEB69 /* Player.cpp in Sources */,
+				FAC9012B29201C8900EAEB69 /* GameAction.cpp in Sources */,
 				FAC90105291D7C7E00EAEB69 /* main.cpp in Sources */,
 				FAC90110291EC21000EAEB69 /* TeamNameTrieTree.cpp in Sources */,
 				FAC9010D291EB78F00EAEB69 /* CurlObject.cpp in Sources */,
+				FAC90128292016CA00EAEB69 /* Hitters.cpp in Sources */,
+				FAC9011A2920140B00EAEB69 /* Game.cpp in Sources */,
 				FAC901172920078D00EAEB69 /* UserInput.cpp in Sources */,
 				FAC90104291D7C4200EAEB69 /* GUmbo2.framework in Sources */,
+				FAC9011D292014D800EAEB69 /* Team.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

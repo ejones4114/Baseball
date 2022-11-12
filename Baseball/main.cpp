@@ -7,13 +7,21 @@
 
 
 #include <iostream>
-#include "CurlObject.cpp"
 #include "TeamNameTrieTree.h"
 #include "UserInput.h"
+#include "Game.h"
 
 using namespace std;
 
 class Baseball {
+   public :
+   Baseball() {
+      TeamNameTrieTree t;
+      UserInput in;
+      std::string home = in.gatherHomeData(t);
+      std::string visiting = in.gatherVisitingData(t);
+      Game g(home, visiting);
+   }
    
    
    
@@ -26,18 +34,10 @@ class Baseball {
 
 
 int main() {
-   
-   TeamNameTrieTree t;
+   Baseball b;
 
    
-   
-   CurlObject *curl = new CurlObject("https://www.baseball-reference.com/teams/SEA/2022.shtml");
-   string info = curl->getData();
-   
-   GumboOutput *out = gumbo_parse(info.c_str());
 
-   std::cout << curl->cleantext(out->root) << std::endl;
-   gumbo_destroy_output(&kGumboDefaultOptions, out);
    
    return 0;
 }

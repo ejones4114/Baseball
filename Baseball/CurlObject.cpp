@@ -65,6 +65,22 @@
         }
       }
       
+      std::string stringToParse(std::string s) {
+         int save = 0;
+         for(int i = 0; i < s.length(); i++) {
+            if(s[i] == 'I') {
+               save = i;
+               if(s[save + 1] == 'B') {
+                  if(s[save + 2 == 'B']) {
+                     break;
+                  }
+               }
+            }
+         }
+         return s.substr(save + 4, s.length());
+      }
+      
+      
   protected:
       CURL * curl;
       std::string curlBuffer;
