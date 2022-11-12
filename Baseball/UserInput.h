@@ -19,10 +19,8 @@ public:
    
    UserInput();
    
-   
-   
-   
-   void gatherUserData(const TeamNameTrieTree &t) const;
+   std::string gatherHomeData(const TeamNameTrieTree &t) const;
+   std::string gatherVisitingData(const TeamNameTrieTree &t) const;
    
 };
 

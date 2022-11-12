@@ -182,7 +182,7 @@ std::string TeamNameTrieTree::teamResult(std::string team) const {
    }
    
    TrieTreeNode *curr = names;
-   TrieTreeNode *prev = names;
+//   TrieTreeNode *prev = names;
    for(int i = 0; i < team.length(); i++) {
       if(curr == nullptr) {
          
@@ -192,7 +192,6 @@ std::string TeamNameTrieTree::teamResult(std::string team) const {
    
    std::string result = *curr->fullName;
    curr = nullptr;
-   prev = nullptr;
    return result;
 }
 
