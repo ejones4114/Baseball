@@ -14,6 +14,8 @@
 		FAC9010A291D81B100EAEB69 /* libcurl.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC90107291D81B100EAEB69 /* libcurl.3.tbd */; };
 		FAC9010B291D81B100EAEB69 /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC90108291D81B100EAEB69 /* libcurl.tbd */; };
 		FAC9010D291EB78F00EAEB69 /* CurlObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC9010C291EB78F00EAEB69 /* CurlObject.cpp */; };
+		FAC90110291EC21000EAEB69 /* TeamNameTrieTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC9010E291EC21000EAEB69 /* TeamNameTrieTree.cpp */; };
+		FAC901172920078D00EAEB69 /* UserInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC901162920078D00EAEB69 /* UserInput.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +38,10 @@
 		FAC90107291D81B100EAEB69 /* libcurl.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.3.tbd; path = usr/lib/libcurl.3.tbd; sourceTree = SDKROOT; };
 		FAC90108291D81B100EAEB69 /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
 		FAC9010C291EB78F00EAEB69 /* CurlObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CurlObject.cpp; sourceTree = "<group>"; };
+		FAC9010E291EC21000EAEB69 /* TeamNameTrieTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TeamNameTrieTree.cpp; sourceTree = "<group>"; };
+		FAC9010F291EC21000EAEB69 /* TeamNameTrieTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamNameTrieTree.h; sourceTree = "<group>"; };
+		FAC901152920078D00EAEB69 /* UserInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInput.h; sourceTree = "<group>"; };
+		FAC901162920078D00EAEB69 /* UserInput.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UserInput.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +79,12 @@
 		FAC90086291D786400EAEB69 /* Baseball */ = {
 			isa = PBXGroup;
 			children = (
+				FAC901162920078D00EAEB69 /* UserInput.cpp */,
+				FAC901152920078D00EAEB69 /* UserInput.h */,
 				FAC90087291D786400EAEB69 /* main.cpp */,
 				FAC9010C291EB78F00EAEB69 /* CurlObject.cpp */,
+				FAC9010E291EC21000EAEB69 /* TeamNameTrieTree.cpp */,
+				FAC9010F291EC21000EAEB69 /* TeamNameTrieTree.h */,
 			);
 			path = Baseball;
 			sourceTree = "<group>";
@@ -148,7 +158,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC90105291D7C7E00EAEB69 /* main.cpp in Sources */,
+				FAC90110291EC21000EAEB69 /* TeamNameTrieTree.cpp in Sources */,
 				FAC9010D291EB78F00EAEB69 /* CurlObject.cpp in Sources */,
+				FAC901172920078D00EAEB69 /* UserInput.cpp in Sources */,
 				FAC90104291D7C4200EAEB69 /* GUmbo2.framework in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

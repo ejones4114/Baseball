@@ -8,10 +8,28 @@
 
 #include <iostream>
 #include "CurlObject.cpp"
+#include "TeamNameTrieTree.h"
+#include "UserInput.h"
 
 using namespace std;
 
+class Baseball {
+   
+   
+   
+   
+};
+
+
+
+
+
+
 int main() {
+   
+   TeamNameTrieTree t;
+
+   
    
    CurlObject *curl = new CurlObject("https://www.baseball-reference.com/teams/SEA/2022.shtml");
    string info = curl->getData();
