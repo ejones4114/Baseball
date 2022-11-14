@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <string>
 #include "Player.cpp"
+#include "Hitters.h"
 #include <iostream>
 
 class Team {
@@ -32,6 +33,7 @@ private:
    
 public:
    
+   Player* getHitter(int lineUpNum);
    Team(std::string name);
    
    std::string getAbbr(std::string name);

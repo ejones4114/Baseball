@@ -38,21 +38,27 @@ class TeamNameTrieTree {
    struct TrieTreeNode {
       TrieTreeNode *teamName[27] = { };
       char ch = '0';
-      std::string *fullName;
+      std::string *fullName = nullptr;
       std::list <char> nextChars;
       
+      // Method adds a team name into the trie
       void build(std::string &name) {
          TrieTreeNode *curr = this;
+         long len = name.length() - 1;
+         int loc = 0;
          for(char c : name) {
-            c -= '`';
+            c -= '`'; // ` is used to notate spaces between words
+            
             if(curr->teamName[c] == nullptr) {
                curr->teamName[c] = new TrieTreeNode;
                char save = c + '`';
                curr->teamName[c]->ch = save;
             }
             curr = curr->teamName[c];
+            if(loc < len) curr->nextChars.push_back(name[loc + 1]);
+            loc++;
          }
-         curr->fullName = &name;
+         curr->fullName = &name;  // hold full name at the last node
          curr = nullptr;
       }
       

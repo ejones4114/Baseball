@@ -11,27 +11,44 @@
 #include <stdio.h>
 #include "Team.h"
 #include "GameAction.h"
+#include <vector>
+
 
 
 class Game {
    
 private:
+   
+   enum INNING {TOP, BOTTOM};
+   
+   enum BASECONDITIONS {EMPTY, FIRST, FIRST_SECOND, FIRST_THIRD, SECOND, THIRD, SECOND_THIRD, LOADED };
+   
+   BASECONDITIONS onBase;
    Team *homeTeam;
    Team *visitingTeam;
-   GameAction *gameAction;
-//   std::vector<GameAction*> gameDetails;
+   std::vector<GameAction*> playByPlay;
+   std::vector<std::vector<int>> boxScore;
+
+   int homeHitter;
+   int visitingHitter;
    int homeScore;
    int visitingScore;
    int inning;
+   int baseRunnersOn;
    
-   void populateTeam(std::string name);
    
    std::string getTeamAbbr(std::string name);
    
+   void playBall();
+   void playInning(INNING half);
+   int getHitterNum(int hitter);
+   void advanceRunners(BASES base, INNING half);
+   void clearBases();
    
    
 public:
    Game(std::string homeTeam, std::string visitingTeam);
+   
    
    
 };

@@ -10,6 +10,9 @@
 #include "TeamNameTrieTree.h"
 #include "UserInput.h"
 #include "Game.h"
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 using namespace std;
 
@@ -28,12 +31,15 @@ class Baseball {
    
 };
 
-
-
-
+std::size_t get_seed() {
+    std::random_device entropy;
+    return entropy();
+}
 
 
 int main() {
+   
+   
    Baseball b;
 
    

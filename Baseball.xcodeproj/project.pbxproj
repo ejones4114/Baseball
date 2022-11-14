@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAC250E029216ECA0098D38C /* Calculations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC250DE29216ECA0098D38C /* Calculations.cpp */; };
 		FAC900C3291D79C900EAEB69 /* GUmbo2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC900C2291D79C900EAEB69 /* GUmbo2.framework */; };
 		FAC90104291D7C4200EAEB69 /* GUmbo2.framework in Sources */ = {isa = PBXBuildFile; fileRef = FAC900C2291D79C900EAEB69 /* GUmbo2.framework */; };
 		FAC90105291D7C7E00EAEB69 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC90087291D786400EAEB69 /* main.cpp */; };
@@ -36,6 +37,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FAC250DE29216ECA0098D38C /* Calculations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Calculations.cpp; sourceTree = "<group>"; };
+		FAC250DF29216ECA0098D38C /* Calculations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calculations.h; sourceTree = "<group>"; };
+		FAC250E129217B1F0098D38C /* Actions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Actions.h; sourceTree = "<group>"; };
 		FAC90084291D786400EAEB69 /* Baseball */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Baseball; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC90087291D786400EAEB69 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FAC900C2291D79C900EAEB69 /* GUmbo2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GUmbo2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +80,9 @@
 		FAC9007B291D786400EAEB69 = {
 			isa = PBXGroup;
 			children = (
+				FAC250E129217B1F0098D38C /* Actions.h */,
+				FAC250DE29216ECA0098D38C /* Calculations.cpp */,
+				FAC250DF29216ECA0098D38C /* Calculations.h */,
 				FAC90086291D786400EAEB69 /* Baseball */,
 				FAC90085291D786400EAEB69 /* Products */,
 				FAC900C1291D79C900EAEB69 /* Frameworks */,
@@ -189,6 +196,7 @@
 				FAC9011A2920140B00EAEB69 /* Game.cpp in Sources */,
 				FAC901172920078D00EAEB69 /* UserInput.cpp in Sources */,
 				FAC90104291D7C4200EAEB69 /* GUmbo2.framework in Sources */,
+				FAC250E029216ECA0098D38C /* Calculations.cpp in Sources */,
 				FAC9011D292014D800EAEB69 /* Team.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

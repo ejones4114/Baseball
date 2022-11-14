@@ -6,6 +6,7 @@
 //
 
 #include "TeamNameTrieTree.h"
+#include <iostream>
 
 TeamNameTrieTree::TeamNameTrieTree() {
    populateListOfTeams();
@@ -156,6 +157,126 @@ void TeamNameTrieTree::populateListOfTeams() {
    t1.teamName = "san`fransisco`giants";
    t1.d = NLW;
    teamList.push_back(t1);
+   
+   t1.teamName = "mariners";
+   t1.d = ALW;
+   teamList.push_back(t1);
+   
+   t1.teamName = "white`sox";
+   t1.d = ALC;
+   teamList.push_back(t1);
+   
+   t1.teamName = "guardians";
+   t1.d = ALC;
+   teamList.push_back(t1);
+   
+   t1.teamName = "tigers";
+   t1.d = ALC;
+   teamList.push_back(t1);
+   
+   t1.teamName = "royals";
+   t1.d = ALC;
+   teamList.push_back(t1);
+   
+   t1.teamName = "twins";
+   t1.d = ALC;
+   teamList.push_back(t1);
+   
+   t1.teamName = "cubs";
+   t1.d = NLC;
+   teamList.push_back(t1);
+   
+   t1.teamName = "reds";
+   t1.d = ALC;
+   teamList.push_back(t1);
+   
+   t1.teamName = "brewers";
+   t1.d = ALC;
+   teamList.push_back(t1);
+   
+   t1.teamName = "pirates";
+   t1.d = ALC;
+   teamList.push_back(t1);
+   
+   t1.teamName = "cardinals";
+   t1.d = ALC;
+   teamList.push_back(t1);
+   
+   t1.teamName = "orioles";
+   t1.d = ALE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "red`sox";
+   t1.d = ALE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "yankees";
+   t1.d = ALE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "rays";
+   t1.d = ALE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "blue`jays";
+   t1.d = ALE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "braves";
+   t1.d = NLE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "marlins";
+   t1.d = NLE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "mets";
+   t1.d = NLE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "phillies";
+   t1.d = NLE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "nationals";
+   t1.d = NLE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "astros";
+   t1.d = ALW;
+   teamList.push_back(t1);
+   
+   t1.teamName = "angels";
+   t1.d = ALW;
+   teamList.push_back(t1);
+   
+   t1.teamName = "athletics";
+   t1.d = ALW;
+   teamList.push_back(t1);
+   
+   t1.teamName = "rangers";
+   t1.d = NLE;
+   teamList.push_back(t1);
+   
+   t1.teamName = "diamondbacks";
+   t1.d = NLW;
+   teamList.push_back(t1);
+   
+   t1.teamName = "rockies";
+   t1.d = NLW;
+   teamList.push_back(t1);
+   
+   t1.teamName = "dodgers";
+   t1.d = NLW;
+   teamList.push_back(t1);
+   
+   t1.teamName = "padres";
+   t1.d = NLW;
+   teamList.push_back(t1);
+   
+   t1.teamName = "giants";
+   t1.d = NLW;
+   teamList.push_back(t1);
 }
 
 std::string TeamNameTrieTree::sanitizeInput(std::string team) const{
@@ -176,18 +297,29 @@ std::string TeamNameTrieTree::sanitizeInput(std::string team) const{
 }
 
 
+
+// Method checks if passed in string is a team from the Trie
+// This method will attempt to return what it thinks the user meant if the
+// name has been mispelled.
 std::string TeamNameTrieTree::teamResult(std::string team) const {
    if(names->teamName[team[0] - '`'] == nullptr) {
-      return "";
+      return "Make a method to match similar strings";
    }
    
    TrieTreeNode *curr = names;
-//   TrieTreeNode *prev = names;
+   TrieTreeNode *prev = nullptr;
    for(int i = 0; i < team.length(); i++) {
-      if(curr == nullptr) {
-         
+      if(curr == nullptr) {  // when typed response doesnt match trie
+         char nextCharGuess = prev->nextChars.front();
+         curr = prev->teamName[nextCharGuess - '`'];
+         prev = curr;
+      } else if (curr->fullName != nullptr) {
+         break;
       }
-      curr = curr->teamName[team[i] - '`'];
+      else {
+         prev = curr;
+         curr = curr->teamName[team[i] - '`'];
+      }
    }
    
    std::string result = *curr->fullName;
