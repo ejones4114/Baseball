@@ -17,6 +17,8 @@ protected:
    
 public:
    
+   virtual ~Player() { }
+   
    std::string getName() {
       return this->name;
    }

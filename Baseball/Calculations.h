@@ -21,11 +21,11 @@
 #endif /* Calculations_h */
 
 typedef std::mt19937 rng_type;
+
 class Calculations {
    
 private:
    
-   rng_type rng;
    std::size_t get_seed();
    int getRandomNumber(int upperBound);
    
@@ -39,5 +39,7 @@ public:
 
    int typeOfNonHit(Hitter *hitter);
 
-   int howOutWasRecorded(Hitter *hitter);
+   int typeOfOut(Hitter *hitter);
+   
+   
 };

@@ -16,14 +16,20 @@
 enum BASES { SINGLE, DOUBLE, TRIPLE, HR, WALK, HBP, NONE };
 
 class GameAction {
-   
+ 
+protected: 
+   std::string playerName;
    Calculations c;
    
    public:
       
    
+   void setPlayerName(std::string name);
+   
+   std::string getPlayerName();
    virtual std::string description();
    virtual BASES baseReached();
+   
    
    bool onBaseOrNot(Hitter* hitter);
    

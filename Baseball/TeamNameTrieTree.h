@@ -36,7 +36,7 @@ class TeamNameTrieTree {
    };
    
    struct TrieTreeNode {
-      TrieTreeNode *teamName[27] = { };
+      TrieTreeNode *teamName[27] = { nullptr };
       char ch = '0';
       std::string *fullName = nullptr;
       std::list <char> nextChars;

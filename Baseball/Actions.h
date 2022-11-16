@@ -6,6 +6,7 @@
 //
 #include "GameAction.h"
 #include <iostream>
+#include "Game.h"
 
 
 
@@ -30,7 +31,7 @@ public:
 class Single : public Hit {
 public:
    std::string description() {
-      return "base hit";
+      return this->getPlayerName() + " singles";
    }
    BASES baseReached(){
       return SINGLE;
@@ -40,7 +41,7 @@ public:
 class Double : public Hit {
 public:
    std::string description() {
-      return "double";
+      return this->getPlayerName() + " doubles";
    }
    BASES baseReached() {
       return DOUBLE;
@@ -50,7 +51,7 @@ public:
 class Triple : public Hit {
 public:
    std::string description() {
-      return  "triple";
+      return  this->getPlayerName() + " triples";
    }
    
    BASES baseReached() {
@@ -61,7 +62,7 @@ public:
 class HomeRun : public Hit {
 public:
    std::string description() {
-      return "home run";
+      return this->getPlayerName() + " homers";
    }
    BASES baseReached() {
       return HR;
@@ -91,7 +92,7 @@ public:
 class HitByPitch : public ReachedBaseNoHit {
 public:
    std::string description() {
-      return "hit by pitch";
+      return this->getPlayerName() +  " hit by pitch";
    }
    BASES baseReached() {
       return HBP;
@@ -109,7 +110,7 @@ class Out : public GameAction {
 
 class Strikeout : public Out {
    std::string description() {
-      return "strikes out";
+      return this->getPlayerName() + " strikes out";
    }
    
    BASES baseReached() {
@@ -119,7 +120,7 @@ class Strikeout : public Out {
 
 class Groundout : public Out {
    std::string description() {
-      return "grounds out";
+      return this->getPlayerName() + " grounds out";
    }
    
    BASES baseReached() {
@@ -129,11 +130,34 @@ class Groundout : public Out {
 
 class Flyout : public Out {
    std::string description() {
-      return "flys out";
+      return this->getPlayerName() + " flys out";
    }
    
    BASES baseReached() {
       return NONE;
+   }
+};
+
+class EndOfInning : public GameAction {
+
+private:
+   int inning;
+   std::string half;
+   
+public:
+   std::string description() {
+      return "end of inning " + std::to_string(inning);
+   }
+   
+   BASES baseReached() {
+      return NONE;
+   }
+   void setInning(int inning, std::string half) {
+      this->inning = inning;
+      this->half = half;
+   }
+   int getInning() {
+      return this->inning;
    }
 };
 

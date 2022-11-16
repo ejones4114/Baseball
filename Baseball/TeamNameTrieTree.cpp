@@ -14,6 +14,7 @@ TeamNameTrieTree::TeamNameTrieTree() {
 }
 
 TeamNameTrieTree::~TeamNameTrieTree() {
+
    for(int i = 0; i < 27; i++) {
       if(names->teamName[i] != nullptr) {
          deleteNames(names->teamName[i], 0);
@@ -22,10 +23,16 @@ TeamNameTrieTree::~TeamNameTrieTree() {
 }
 
 void TeamNameTrieTree::deleteNames(TrieTreeNode * node, int index) {
-   if(index > 27) {
+   if(index > 26 || node == nullptr) {
       return;
    }
-   index++;
+   if(node->teamName[index] == nullptr) {
+      index++;
+      return deleteNames(node, index);
+   }
+   if(node->teamName[index] != nullptr) {
+      return deleteNames(node->teamName[index], 0);
+   }
 }
 
 
@@ -313,7 +320,7 @@ std::string TeamNameTrieTree::teamResult(std::string team) const {
          char nextCharGuess = prev->nextChars.front();
          curr = prev->teamName[nextCharGuess - '`'];
          prev = curr;
-      } else if (curr->fullName != nullptr) {
+      } else if (curr->fullName != nullptr && team == *curr->fullName) {
          break;
       }
       else {

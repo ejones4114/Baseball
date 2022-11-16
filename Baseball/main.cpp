@@ -24,6 +24,7 @@ class Baseball {
       std::string home = in.gatherHomeData(t);
       std::string visiting = in.gatherVisitingData(t);
       Game g(home, visiting);
+      g.displayLineScore();
    }
    
    

@@ -15,41 +15,50 @@
 Team::Team(std::string name) {
    this->name = name;
    this->nameAbbr = getAbbr(name);
+   this->score = 0;
+   this->batterUp = 0;
+   this->hits = 0;
    
    populateTeam();
 }
 
+Team::~Team() {
+   for(int i = 0; i < 9; i++) {
+      delete hitters[i];
+   }
+}
+
 std::string Team::getAbbr(std::string name) {
    std::string res = "";
-   if(name == "seattle`mariners") res += "SEA";
-   else if(name == "chicago`white`sox") res += "CHW";
-   else if(name ==  "cleveland`guardians" ) res += "CLE";
-   else if(name == "detroit`tigers" ) res += "DET";
-   else if(name == "kansas`city`royals") res += "KCR";
-   else if(name == "minnesota`twins") res += "MIN";
-   else if(name == "chicago`cubs") res += "CHC";
-   else if(name ==  "cincinnati`reds") res += "CIN";
-   else if(name == "milwaukee`brewers") res += "MIL";
-   else if(name == "pittsburhgh`pirates") res += "PIT";
-   else if(name == "st`louis`cardinals") res += "STL";
-   else if(name == "baltimore`orioles") res += "BAL";
-   else if(name == "boston`red`sox" ) res += "BOS";
-   else if(name == "new`york`yankees" ) res += "NYY";
-   else if(name == "tampa`bay`rays") res += "TBR";
-   else if(name ==  "toronto`blue`jays" ) res += "TOR";
-   else if(name == "atlanta`braves") res += "ATL";
-   else if(name == "miami`marlins") res += "MIA";
-   else if(name == "new`york`mets") res += "NYM";
-   else if(name == "philadelphia`phillies" ) res += "PHI";
-   else if(name == "washington`nationals") res += "WSN";
-   else if(name == "houston`astros") res += "HOU";
-   else if(name == "los`angeles`angels") res += "LAA";
-   else if(name ==  "oakland`athletics") res += "OAK";
-   else if(name ==  "texas`rangers") res += "TEX";
-   else if(name ==  "arizona`diamondbacks") res += "ARI";
-   else if(name == "colorado`rockies") res += "COL";
-   else if(name ==  "los`angeles`dodgers") res += "LAD";
-   else if(name == "san`diego`padres") res += "SDP";
+   if(name == "seattle`mariners" || name == "mariners" || name =="seattle") res += "SEA";
+   else if(name == "chicago`white`sox" || name =="white`sox") res += "CHW";
+   else if(name ==  "cleveland`guardians" || name =="guardians" ) res += "CLE";
+   else if(name == "detroit`tigers" || name == "tigers" ) res += "DET";
+   else if(name == "kansas`city`royals" || name =="royals") res += "KCR";
+   else if(name == "minnesota`twins" || name == "twins") res += "MIN";
+   else if(name == "chicago`cubs" ||  name == "cubs") res += "CHC";
+   else if(name ==  "cincinnati`reds" ||  name =="reds") res += "CIN";
+   else if(name == "milwaukee`brewers" ||  name =="brewers" ||name =="milwaukee") res += "MIL";
+   else if(name == "pittsburhgh`pirates" ||name == "pirates" ||name =="pittsburg") res += "PIT";
+   else if(name == "st`louis`cardinals" ||name == "cardinals" ||name == "st`louis") res += "STL";
+   else if(name == "baltimore`orioles" || name =="orioles" || name == "baltimore") res += "BAL";
+   else if(name == "boston`red`sox" ||name == "red'sox" ||name == "boston" ) res += "BOS";
+   else if(name == "new`york`yankees"  ||name == "yankees") res += "NYY";
+   else if(name == "tampa`bay`rays" ||name == "rays" ||name == "tampa'bay") res += "TBR";
+   else if(name ==  "toronto`blue`jays" || name == "blue`jays") res += "TOR";
+   else if(name == "atlanta`braves" || name == "braves") res += "ATL";
+   else if(name == "miami`marlins" || name == "marlins") res += "MIA";
+   else if(name == "new`york`mets" || name == "mets") res += "NYM";
+   else if(name == "philadelphia`phillies" || name == "phillies") res += "PHI";
+   else if(name == "washington`nationals" || name == "nationals") res += "WSN";
+   else if(name == "houston`astros" || name == "astros") res += "HOU";
+   else if(name == "los`angeles`angels" || name == "angles") res += "LAA";
+   else if(name ==  "oakland`athletics" ||name == "athletics") res += "OAK";
+   else if(name ==  "texas`rangers" || name == "rangers") res += "TEX";
+   else if(name ==  "arizona`diamondbacks" || name == "diamondbacks") res += "ARI";
+   else if(name == "colorado`rockies" || name == "rockies") res += "COL";
+   else if(name ==  "los`angeles`dodgers" || name == "dodgers") res += "LAD";
+   else if(name == "san`diego`padres" || name == "padres") res += "SDP";
    else res += "SFG";
    return res;
 }
@@ -150,4 +159,32 @@ void Team::playerStats(std::istringstream &is, int *stats) {
 
 Player* Team::getHitter(int lineUpNum) {
    return this->hitters[lineUpNum];
+}
+
+int Team::getBatterUp() {
+   return this->batterUp;
+}
+
+void Team::setBatterUp(int batterUp) {
+   this->batterUp = batterUp;
+}
+
+
+int Team::getScore() {
+   return this->score;
+}
+void Team::setScore(int score) {
+   this->score += score;
+}
+
+void Team::setHits() {
+   this->hits++;
+}
+
+int Team::getHits() {
+   return this->hits;
+}
+
+std::string Team::getTeamName() {
+   return this->name;
 }

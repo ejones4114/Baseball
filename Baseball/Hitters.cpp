@@ -38,6 +38,13 @@ Hitter::   Hitter(std::string name, int age, int games, int plateAppearances, in
    this->ibb = ibb;
 }
 
+Hitter::~Hitter() {
+   delete this;
+}
+
+std::string Hitter::getName() {
+   return Player::getName();
+}
 
 int Hitter::getBattingAvg() {
    return this->battingAvg;

@@ -71,6 +71,7 @@ class Hitter : public Player {
    int getOnBasePrcnt();
    int getBB();
    int getPlateAppearances();
+   std::string getName();
    
    void display();
    

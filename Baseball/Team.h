@@ -19,6 +19,10 @@ class Team {
 private:
    std::string name;
    std::string nameAbbr;
+   int score;
+   int batterUp;
+   int hits;
+   
    Player *hitters[9];
    Player *pitcher;
  
@@ -35,10 +39,17 @@ public:
    
    Player* getHitter(int lineUpNum);
    Team(std::string name);
+   ~Team();
    
    std::string getAbbr(std::string name);
+   std::string getTeamName();
    
-   
+   void setBatterUp(int batterUp);
+   int getBatterUp();
+   int getScore();
+   void setScore(int score);
+   void setHits();
+   int getHits();
    
    
    

@@ -25,12 +25,17 @@ BASES GameAction::baseReached() {
 GameAction* GameAction::typeOfOnBase(Hitter *hitter) {
    bool result = c.howBaseWasReached(hitter); // true = Hit
    int whatBase = 0;
-   if(result) { // it was a hit
+   if(result == true) { // it was a hit
       whatBase = c.typeOfHit(hitter);
-   } else {
-      whatBase += 5;  // 1 - 4 used for Hits
+   } else if(result == false) {
       whatBase = c.typeOfNonHit(hitter);
    }
+   
+   if(whatBase <= 0 || whatBase >= 7) {
+      std::cout << "STOP HERE!!";
+      std::cout << "I MEAN IT";
+   }
+   
    GameAction *a = nullptr;
    switch (whatBase) {
       case 1:
@@ -58,7 +63,11 @@ GameAction* GameAction::typeOfOnBase(Hitter *hitter) {
 GameAction* GameAction::typeOfOut(Hitter *hitter) {
    GameAction *a = nullptr;
    
-   int result = c.typeOfNonHit(hitter);
+   int result = c.typeOfOut(hitter);
+   
+   if(result <= 0 || result >= 4) {
+      std::cout << "HALT";
+   }
    
    switch(result) {
       case 1: a = new Strikeout;
@@ -72,6 +81,12 @@ GameAction* GameAction::typeOfOut(Hitter *hitter) {
 }
 
 
+void GameAction::setPlayerName(std::string name) {
+   this->playerName = name;
+}
 
+std::string  GameAction::getPlayerName() {
+   return this->playerName;
+}
 
 

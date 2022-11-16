@@ -80,9 +80,6 @@
 		FAC9007B291D786400EAEB69 = {
 			isa = PBXGroup;
 			children = (
-				FAC250E129217B1F0098D38C /* Actions.h */,
-				FAC250DE29216ECA0098D38C /* Calculations.cpp */,
-				FAC250DF29216ECA0098D38C /* Calculations.h */,
 				FAC90086291D786400EAEB69 /* Baseball */,
 				FAC90085291D786400EAEB69 /* Products */,
 				FAC900C1291D79C900EAEB69 /* Frameworks */,
@@ -100,6 +97,9 @@
 		FAC90086291D786400EAEB69 /* Baseball */ = {
 			isa = PBXGroup;
 			children = (
+				FAC250E129217B1F0098D38C /* Actions.h */,
+				FAC250DE29216ECA0098D38C /* Calculations.cpp */,
+				FAC250DF29216ECA0098D38C /* Calculations.h */,
 				FAC901162920078D00EAEB69 /* UserInput.cpp */,
 				FAC901152920078D00EAEB69 /* UserInput.h */,
 				FAC90087291D786400EAEB69 /* main.cpp */,
