@@ -138,26 +138,32 @@ class Flyout : public Out {
    }
 };
 
-class EndOfInning : public GameAction {
+class EndOfInningHalf : public GameAction {
 
 private:
-   int inning;
+   Team *visiting;
+   Team *home;
    std::string half;
    
 public:
+   
+   EndOfInningHalf(int inning, Team *home, Team *visiting, std::string half) {
+      this->home = home;
+      this->visiting = visiting;
+      this->half = half;
+   }
+   
    std::string description() {
-      return "end of inning " + std::to_string(inning);
+      std::string result = "End of the " + half + "\n";
+      result += "The score is " + this->home->getTeamName() + " ";
+      result += home->getScore();
+      result += this->visiting->getTeamName() + " ";
+      result += this->visiting->getScore();
+      return result;
    }
    
    BASES baseReached() {
       return NONE;
-   }
-   void setInning(int inning, std::string half) {
-      this->inning = inning;
-      this->half = half;
-   }
-   int getInning() {
-      return this->inning;
    }
 };
 
